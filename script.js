@@ -1,5 +1,5 @@
-const apiKey = '1f68b9aa86424baaa59b4fd5520f4ff5';  // Your API key from NewsAPI
-const baseUrl = 'https://newsapi.org/v2/everything';  // NewsAPI URL
+// const apiKey = '1f68b9aa86424baaa59b4fd5520f4ff5';  // Your API key from NewsAPI
+// const baseUrl = 'https://newsapi.org/v2/everything';  // NewsAPI URL
 
 // Function to fetch news articles based on search query
 const fetchNews = async (query) => {
@@ -56,3 +56,17 @@ const searchNews = () => {
 };
 
 
+
+const fs = require('fs');
+
+fs.readFile('index.json', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err);
+    } else {
+        console.log(JSON.parse(data));
+    }
+});
+
+fetch('https://your-api-url.com/data.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
